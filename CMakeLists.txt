@@ -36,3 +36,16 @@ set_target_properties(${PROJECT_NAME}
         CXX_STANDARD_REQUIRED ON
         CXX_EXTENSIONS        OFF
 )
+
+install(TARGETS filename
+        DESTINATION bin
+        PERMISSIONS OWNER_EXECUTE OWNER_WRITE OWNER_READ
+                    GROUP_EXECUTE GROUP_READ
+)
+install(DIRECTORY ${PROJECT_SOURCE_DIR}/data/
+        DESTINATION bin
+        PATTERN "data/exclude" EXCLUDE
+        REGEX ".+\.md$" EXCLUDE
+        PERMISSIONS OWNER_EXECUTE OWNER_WRITE OWNER_READ
+                    GROUP_EXECUTE GROUP_READ
+)

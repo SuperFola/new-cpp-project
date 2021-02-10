@@ -1,0 +1,7 @@
+**
+
+!.git
+!include
+!src
+!.gitmodules
+!CMakeLists.txt
