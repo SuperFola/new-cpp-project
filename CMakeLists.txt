@@ -4,7 +4,7 @@ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
     set(CMAKE_COMPILER_IS_CLANG ON)
 endif()
 
-project(NAME_HERE CXX)
+project(@ProjectName@ CXX)
 
 file(GLOB_RECURSE SOURCE_FILES
     ${PROJECT_SOURCE_DIR}/src/*.cpp
@@ -18,9 +18,10 @@ target_include_directories(${PROJECT_NAME}
 )
 
 if (CMAKE_COMPILER_IS_GNUCXX OR CMAKE_COMPILER_IS_CLANG)
-    target_link_libraries(${PROJECT_NAME}
+    target_link_libraries(
+        ${PROJECT_NAME}
         PUBLIC
-        stdc++fs
+            stdc++fs
     )
 endif()
 
@@ -30,14 +31,15 @@ else()
     target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra)
 endif()
 
-set_target_properties(${PROJECT_NAME}
+set_target_properties(
+    ${PROJECT_NAME}
     PROPERTIES
         CXX_STANDARD          17
         CXX_STANDARD_REQUIRED ON
         CXX_EXTENSIONS        OFF
 )
 
-install(TARGETS filename
+install(TARGETS @Filename@
         DESTINATION bin
         PERMISSIONS OWNER_EXECUTE OWNER_WRITE OWNER_READ
                     GROUP_EXECUTE GROUP_READ

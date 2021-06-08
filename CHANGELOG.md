@@ -1,6 +1,6 @@
 # The projet's changelog
 
-## Unreleased changes
+## [Unreleased]
 ### Added
 - todo
 
@@ -10,7 +10,7 @@
 ### Removed
 - todo
 
-## v0.0.1 - 01/01/1970
+## [v0.0.1] - 01/01/1970
 ### Added
 - todo
 

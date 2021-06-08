@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+if [ -f build/Release/@ProjectName@.exe ]; then
+    exePath=./build/Release/@ProjectName@.exe
+elif [ -f build/@ProjectName@ ]; then
+    exePath=./build/@ProjectName@
+else
+    echo "No @ProjectName@ executable found" && exit 1
+fi
+
+TODO
+$exePath tests whatever || exit 1

@@ -32,4 +32,4 @@ FROM alpine:3.12 AS runner
 COPY --from=organizer /out/final .
 RUN cmake --install build --config Release
 
-ENTRYPOINT [ "program" ]
+ENTRYPOINT [ "@CommandLine@" ]

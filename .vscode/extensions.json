@@ -4,5 +4,5 @@
         "austin.code-gnu-global", // C++ Intellisense
         "twxs.cmake", // CMake
         "ms-vscode.cmake-tools", // CMake Tools
-                                                ]
+    ]
 }
