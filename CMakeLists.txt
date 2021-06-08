@@ -1,10 +1,15 @@
-cmake_minimum_required(VERSION 3.8)
+cmake_minimum_required(VERSION 3.12)
 
 if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
     set(CMAKE_COMPILER_IS_CLANG ON)
 endif()
 
-project(@ProjectName@ CXX)
+project(@ProjectName@ CXX VERSION 0.0.1)  # TODO update version
+
+configure_file(
+    ${PROJECT_SOURCE_DIR}/include/Configuration.hpp.in
+    ${PROJECT_SOURCE_DIR}/include/Configuration.hpp
+)
 
 file(GLOB_RECURSE SOURCE_FILES
     ${PROJECT_SOURCE_DIR}/src/*.cpp

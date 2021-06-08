@@ -25,3 +25,8 @@ Check for TODO throughout the project, you can find them in:
 - [ ] ROADMAP.md (your vision for the development of the project ; not a problem if you can not follow it perfectly)
 - [ ] .github/labeler.yml (list of GitHub labels to add to PRs when listed files are modified)
 - [ ] .github/launch-tests (bash script to launch your tests)
+- [ ] include/Configuration.hpp.in (customize the macros names, eg prefix them with your project name)
+    - [ ] add `#define A_MACRO @VariableFromCMake@` (or `constexpr T`) since this file is being configured from CMake
+- [ ] CMakeLists.txt (update project version)
+
+Do not forget to remove the now useless `.gitkeep` files.

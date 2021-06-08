@@ -29,3 +29,6 @@
 
 # Build directories
 build/
+
+# CMake generated files
+include/Configuration.hpp
