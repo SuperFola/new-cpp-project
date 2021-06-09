@@ -6,6 +6,8 @@ endif()
 
 project(@ProjectName@ CXX VERSION 0.0.1)  # TODO update version
 
+add_subdirectory(dependencies)
+
 configure_file(
     ${PROJECT_SOURCE_DIR}/include/Configuration.hpp.in
     ${PROJECT_SOURCE_DIR}/include/Configuration.hpp
