@@ -1,10 +1,13 @@
-cmake_minimum_required(VERSION 3.12)
+cmake_minimum_required(VERSION 3.14)
 
 if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
     set(CMAKE_COMPILER_IS_CLANG ON)
 endif()
 
-project(@ProjectName@ CXX VERSION 0.0.1)  # TODO update version
+project(@ProjectName@
+    LANGUAGES CXX
+    VERSION 0.0.1  # TODO update version
+)
 
 add_subdirectory(dependencies)
 
@@ -17,11 +20,16 @@ file(GLOB_RECURSE SOURCE_FILES
     ${PROJECT_SOURCE_DIR}/src/*.cpp
 )
 
-add_library(${PROJECT_NAME} ${SOURCE_FILES})
+add_executable(${PROJECT_NAME} ${SOURCE_FILES})
+
+target_link_libraries(${PROJECT_NAME}
+    PRIVATE
+        argh
+)
 
 target_include_directories(${PROJECT_NAME}
-    PUBLIC
-    ${PROJECT_SOURCE_DIR}/include
+    PRIVATE
+        ${PROJECT_SOURCE_DIR}/include
 )
 
 if (CMAKE_COMPILER_IS_GNUCXX OR CMAKE_COMPILER_IS_CLANG)
